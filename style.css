@@ -6,7 +6,7 @@
 header {
     display: flex;
     background: #333;
-    padding: 1.5em;
+    padding: 1em 3em;
     color: white;
 }
 header h1 {
@@ -23,6 +23,8 @@ body {
     background-color: #cfdbd5;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .library {
@@ -79,4 +81,23 @@ button {
     width: 10em;
     align-self: flex-end;
     margin: 0 auto;
+}
+
+footer {
+    display: flex;
+    margin-top: auto;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1em;
+}
+
+footer p {
+    padding: 0em;
+    margin: 0px 5px 0px 0px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
