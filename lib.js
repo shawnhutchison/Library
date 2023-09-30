@@ -31,13 +31,13 @@ function displayBook(book) {
     const newCardStatusContainer = document.createElement('div');
     newCardStatusContainer.classList.add('status_container');
     
-    const newCardStatus_Started = document.createElement('button');
-    newCardStatus_Started.textContent = 'Started';
-    newCardStatusContainer.appendChild(newCardStatus_Started);
+    // const newCardStatus_Started = document.createElement('button');
+    // newCardStatus_Started.textContent = 'Started';
+    // newCardStatusContainer.appendChild(newCardStatus_Started);
 
-    const newCardStatus_Finished = document.createElement('button');
-    newCardStatus_Finished.textContent = 'Finished';
-    newCardStatusContainer.appendChild(newCardStatus_Finished);
+    // const newCardStatus_Finished = document.createElement('button');
+    // newCardStatus_Finished.textContent = 'Finished';
+    // newCardStatusContainer.appendChild(newCardStatus_Finished);
 
     newCard.appendChild(newCardStatusContainer)
 
