@@ -13,6 +13,8 @@ function addBookToLibrary(title, author, pages) {
 
 function displayBook(book) {
     const newCard = document.createElement('article');
+    let dataID = Math.floor(Math.random() * 100000);
+    newCard.setAttribute('data-id', dataID);
     
     const newCardTitle = document.createElement('h3');
     newCardTitle.textContent = book.title;
@@ -40,8 +42,13 @@ function displayBook(book) {
     newCard.appendChild(newCardStatusContainer)
 
     const newCardButton_Remove = document.createElement('button');
+    newCardButton_Remove.setAttribute('data-id', dataID);
     newCardButton_Remove.textContent = 'Remove';
     newCardButton_Remove.classList.add('remove_button');
+    newCardButton_Remove.addEventListener('click', function(event) {
+        let removeBookID = event.target.getAttribute('data-id');
+        removeBook(removeBookID);
+    });
     newCard.appendChild(newCardButton_Remove);
 
     const libraryContainer = document.querySelector('.library');
@@ -68,11 +75,28 @@ document.getElementById('bookForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     // Get the form values
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-    const pages = document.getElementById('pages').value;
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    const pages = document.getElementById('pages');
 
-    addBookToLibrary(title, author, pages)
+    addBookToLibrary(title.value, author.value, pages.value)
     displayBook(myLibrary[myLibrary.length - 1]);
 
+    title.value = title.placeholder;
+    author.value = author.placeholder;
+    pages.value = '';
 });
+
+
+function removeBook(id) {
+    let bookToRemove = document.querySelector(`article[data-id="${id}"]`);
+    console.log(bookToRemove);
+    if (bookToRemove) {
+        bookToRemove.parentNode.removeChild(bookToRemove);
+    } else {
+        console.log('Failed to target dom node');
+    }
+
+}
+
+
