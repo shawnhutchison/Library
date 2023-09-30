@@ -9,7 +9,6 @@ function Book(title, author, pages) {
 function addBookToLibrary(title, author, pages) {
     let newBook = new Book(title, author, pages);
     myLibrary.push(newBook);
-    displayBook(newBook);
 }
 
 function displayBook(book) {
@@ -42,6 +41,7 @@ function displayBook(book) {
 
     const newCardButton_Remove = document.createElement('button');
     newCardButton_Remove.textContent = 'Remove';
+    newCardButton_Remove.classList.add('remove_button');
     newCard.appendChild(newCardButton_Remove);
 
     const libraryContainer = document.querySelector('.library');
@@ -52,3 +52,27 @@ function displayBook(book) {
         console.error('Library container not found!');
     }
 }
+
+// Initialize library with sample books and display them
+addBookToLibrary("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", 224);
+addBookToLibrary('Dune', 'Frank Herbert', 896);
+addBookToLibrary('Dracula', 'Bram Stoker', 432);
+
+for (let i = 0; i < myLibrary.length; i++) {
+    displayBook(myLibrary[i]);
+}
+
+// Add a book functionality
+document.getElementById('bookForm').addEventListener('submit', function(event) {
+    // Prevent the form from submitting to the server
+    event.preventDefault();
+
+    // Get the form values
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
+
+    addBookToLibrary(title, author, pages)
+    displayBook(myLibrary[myLibrary.length - 1]);
+
+});

@@ -9,6 +9,27 @@
     <script defer src="lib.js"></script>
 </head>
 <body>
-    <div class="library"></div>
+    <header>
+        Library
+    </header>
+    <div class="container">
+        <div class="library">
+            <article class="add_a_book">
+                <form id="bookForm">
+                    <label for="title">Book Title:</label>
+                    <input type="text" id="title" name="title" required>
+            
+                    <label for="author">Book Author:</label>
+                    <input type="text" id="author" name="author" required>
+            
+                    <label for="pages">Number of Pages:</label>
+                    <input type="number" id="pages" name="pages" required>
+            
+                    <button type="submit" class="add_button">+ Add a book</button>
+    
+                </form>
+            </article>
+        </div>
+    </div>
 </body>
 </html>

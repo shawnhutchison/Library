@@ -2,8 +2,22 @@
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
+
+header {
+    display: flex;
+    background: #333;
+    padding: 1em;
+    color: white;
+}
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 2em 0em;
+}
 body {
-    background: black;
+    padding: 0;
+    margin: 0;
+    background-color: #cfdbd5;
 }
 
 .library {
@@ -15,9 +29,32 @@ article {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 300px;
-    padding: 1em;
+    width: 15em;
+    height: 20em;
+    padding: 1em 2em;
     background: white;
     border-radius: 5px;
     text-align: center;
+}
+
+button {
+    border-radius: 2em;
+    border: none;
+    padding: 1em;
+    background: none;
+}
+
+.add_button {
+    background-color: black;
+    color: white;
+    margin-bottom: 2em;
+}
+
+
+.remove_button {
+    background-color: #218380;
+    color: white;
+    width: 10em;
+    align-self: flex-end;
+    margin: 0 auto;
 }
