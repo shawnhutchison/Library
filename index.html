@@ -10,22 +10,18 @@
 </head>
 <body>
     <header>
-        Library
+        <h1>library</h1>
     </header>
     <div class="container">
         <div class="library">
             <article class="add_a_book">
                 <form id="bookForm">
-                    <label for="title">Book Title:</label>
-                    <input type="text" id="title" name="title" required>
+                    <h2>Add a book to your Library</h2>
+                    <input type="text" id="title" name="title" placeholder="Title" required>
+                    <input type="text" id="author" name="author" placeholder="Author" required>
+                    <input type="number" id="pages" name="pages" placeholder="Number of pages" required>
             
-                    <label for="author">Book Author:</label>
-                    <input type="text" id="author" name="author" required>
-            
-                    <label for="pages">Number of Pages:</label>
-                    <input type="number" id="pages" name="pages" required>
-            
-                    <button type="submit" class="add_button">+ Add a book</button>
+                    <button type="submit" class="add_button">+ Add book</button>
     
                 </form>
             </article>
